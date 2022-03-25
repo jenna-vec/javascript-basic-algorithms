@@ -5,7 +5,7 @@ You may assume that each input would have exactly one solution, and you may not 
 You can return the answer in any order.
 */
 
-function twoSum(nums, target) {
+let twoSum = (nums, target) => {
   let map = new Map;
   for (var i=0; i<nums.length; i++){
       let complement = target - nums[i];
@@ -28,7 +28,7 @@ Return array containing duplicates.
 Hint: ...args spreads inputs into an array.
 */
 
-function syms(...args) {
+let syms = (...args) => {
   let all = [];
    args.forEach((array) => {
     for(i=0; i<array.length; i++){
@@ -41,3 +41,33 @@ function syms(...args) {
 
 console.log(sym([1, 2, 3], [5, 2, 1, 4]));
 //Output [2, 1];
+
+
+/*
+3
+Return an array of the names in a given object array using hasOwnProperty.
+*/
+
+let items = [
+    {name: "Jonathan"},
+    {a: 5},
+    {name: "Peter"},
+    {title: "Software Engineer"},
+]
+
+let findName = (arr) => {
+  let nameArray = [];
+  arr.forEach((obj) => {
+    if(obj.hasOwnProperty("name")){
+      arr.push(obj.name);
+    }
+  });
+  return nameArray;
+}
+
+console.log(findName(items));
+//Output ["Jonathan", "Peter"]
+
+
+
+
